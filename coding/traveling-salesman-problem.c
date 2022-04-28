@@ -20,8 +20,8 @@ int pa[1000][10] = {{0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
                     {2, 3, 5, 0, 1, 4, 9, 8, 6, 7},
                     {4, 8, 9, 0, 1, 3, 2, 5, 6, 7}};
 
-int i, j, k, l, m, loc, flag, col, it, x = 3, y = 3;
-int count, row = 0, res[1][10], row1, col1, z;
+int loc, flag, col, it, x = 3, y = 3;
+int count, row = 0, res[1][10], row1, col1;
 int numoff = 4;
 int offspring[1000][10];
 int mincost = 9999, mc;
@@ -38,9 +38,9 @@ int main(void)
     offcal1(pa);
     offcal2(pa);
     printf("\n\t\t First Generation\n");
-    for (i = 0; i < count; i++)
+    for (int i = 0; i < count; i++)
     {
-        for (j = 0; j < 10; j++)
+        for (int j = 0; j < 10; j++)
         {
             printf("%d", offspring[i][j]);
         }
@@ -51,9 +51,9 @@ int main(void)
     {
         getch();
         system("clear");
-        for (i = 0; i < count; i++)
+        for (int i = 0; i < count; i++)
         {
-            for (j = 0; j < 10; j++)
+            for (int j = 0; j < 10; j++)
             {
                 pa[i][j] = offspring[i][j];
             }
@@ -62,9 +62,9 @@ int main(void)
         offcal1(pa);
         offcal2(pa);
         printf("\n\t\t %d Generation\n", y + 1);
-        for (i = 0; i < count; i++)
+        for (int i = 0; i < count; i++)
         {
-            for (j = 0; j < 10; j++)
+            for (int j = 0; j < 10; j++)
             {
                 printf("%d", offspring[i][j]);
             }
@@ -75,7 +75,7 @@ int main(void)
     }
     printf("\n\nMinimum Cost Path\n");
 
-    for (z = 0; z < 10; z++)
+    for (int z = 0; z < 10; z++)
     {
         printf("%d ", res[0][z]);
     }
@@ -86,24 +86,24 @@ int main(void)
 void offcal1(int (*pa)[10])
 {
     count = 0;
-    for (i = 0; i < 1000; i++)
+    for (int i = 0; i < 1000; i++)
     {
-        for (j = 0; j < 10; j++)
+        for (int j = 0; j < 10; j++)
         {
             offspring[i][j] = -1;
         }
     }
 
-    for (k = 0; k < numoff; k++)
+    for (int k = 0; k < numoff; k++)
     {
-        for (l = k + 1; l < numoff; l++)
+        for (int l = k + 1; l < numoff; l++)
         {
             offspring[row][0] = pa[k][0];
             loc = pa[l][0];
             flag = 1;
             while (flag != 0)
             {
-                for (j = 0; j < 10; j++)
+                for (int j = 0; j < 10; j++)
                 {
                     if (pa[k][j] == loc)
                     {
@@ -119,7 +119,7 @@ void offcal1(int (*pa)[10])
                     }
                 }
             } /* end while */
-            for (m = 0; m < 10; m++)
+            for (int m = 0; m < 10; m++)
             {
                 if (offspring[row][m] == -1)
                 {
@@ -127,7 +127,7 @@ void offcal1(int (*pa)[10])
                 }
             }
 
-            for (z = 0; z < 10; z++)
+            for (int z = 0; z < 10; z++)
             {
                 if (z < 9)
                 {
@@ -144,7 +144,7 @@ void offcal1(int (*pa)[10])
             }
             if (mc < mincost)
             {
-                for (z = 0; z < 10; z++)
+                for (int z = 0; z < 10; z++)
                 {
                     res[0][z] = offspring[row][z];
                 }
@@ -158,16 +158,16 @@ void offcal1(int (*pa)[10])
 
 void offcal2(int (*pa)[10])
 {
-    for (k = 0; k < numoff; k++)
+    for (int k = 0; k < numoff; k++)
     {
-        for (l = k + 1; l < numoff; l++)
+        for (int l = k + 1; l < numoff; l++)
         {
             offspring[row][0] = pa[l][0];
             loc = pa[k][0];
             flag = 1;
             while (flag != 0)
             {
-                for (j = 0; j < 10; j++)
+                for (int j = 0; j < 10; j++)
                 {
                     if (pa[l][j] == loc)
                     {
@@ -184,7 +184,7 @@ void offcal2(int (*pa)[10])
                 }
             } /* end while*/
 
-            for (m = 0; m < 10; m++)
+            for (int m = 0; m < 10; m++)
             {
                 if (offspring[row][m] == -1)
                 {
@@ -192,7 +192,7 @@ void offcal2(int (*pa)[10])
                 }
             }
 
-            for (z = 0; z < 10; z++)
+            for (int z = 0; z < 10; z++)
             {
                 if (z < 9)
                 {
@@ -210,7 +210,7 @@ void offcal2(int (*pa)[10])
             row++;
             if (mc < mincost)
             {
-                for (z = 0; z < 10; z++)
+                for (int z = 0; z < 10; z++)
                 {
                     res[0][z] = offspring[row][z];
                 }
