@@ -1,16 +1,12 @@
 # import part
-from inspect import stack
-import random
-from shutil import which
-from turtle import color
+import random 
 import pandas as pd
-import matplotlib.pyplot as plt
-from soupsieve import select
+import matplotlib.pyplot as plt 
 from chapter3.individual import Individual
 
 # https://drive.google.com/drive/folders/1PVvPqO5JbI8gRTffDCD61O2v9BH-Y-JZ
 
-# proportional selection
+#  proportional selection: this method is based on the principle of roulette, where the fitness is the weight of the circular sector, so it is more likely to be selected.
 random.seed(4)
 POPULATION_SIZE = 5
 
@@ -21,7 +17,7 @@ population = sorted(unsorted_population,
 fitness_sum = sum([ind.fitness for ind in population])
 fitness_map = {}
 for i in population:
-    # the one with the highest fitness has a high probability of being selected.
+    # for each individual its fitness is the probability to be selected.
     i_prob = round(100 * i.fitness/fitness_sum)
     i_label = f'{i.name} | fitness: {i.fitness}, prob: {i_prob}%'
     fitness_map[i_label] = i.fitness
@@ -62,6 +58,6 @@ def selection_proportional(individuals: list[Individual]) -> list[Individual]:
     return selected
 
 
-selected = selection_proportional(population)
+selected = selection_proportional(unsorted_population)
 print(f'Population: {population}')
 print(f'Selected: {selected}')
