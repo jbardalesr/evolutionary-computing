@@ -5,7 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import rand
 from soupsieve import select
-from chapter3.individual import Individual
+from individual import Individual
 
 # Universal stochastic sampling: this method is similar to proportional selection with the difference that the roulette is divided into N equally spaced cut-off points.
 # This ensure that the individuals are selected according to the following principle - many good individuals, same average individuals and few bad individuals

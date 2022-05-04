@@ -1,7 +1,7 @@
 import random
 import pandas as pd
 import matplotlib.pyplot as plt
-from chapter3.individual import Individual
+from individual import Individual
 
 POPULATION_SIZE = 5
 random.seed(18)

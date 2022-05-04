@@ -1,5 +1,5 @@
 import random
-from chapter3.individual import Individual
+from individual import Individual
 
 # Elite selection: this method is based on rank selection but the difference is that the best individual is selected
 

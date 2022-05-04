@@ -2,7 +2,7 @@
 import random 
 import pandas as pd
 import matplotlib.pyplot as plt 
-from chapter3.individual import Individual
+from individual import Individual
 
 # https://drive.google.com/drive/folders/1PVvPqO5JbI8gRTffDCD61O2v9BH-Y-JZ
 
