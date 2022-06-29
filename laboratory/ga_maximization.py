@@ -42,11 +42,21 @@ def crossover(p1: Individual, p2: Individual) -> list[Individual]:
 
 
 def mutate(ind: Individual):
-    # bit-flip mutation
+    # one flip mutation, GLOBAL
     mut = copy.deepcopy(ind.getGenotype())
-    point = random.randint(0, bits - 1)
-    g1 = mut[point]
-    mut[point] = (g1 + 1) % 2
+    # point = random.randint(0, bits - 1)
+    # g1 = mut[point]
+    # mut[point] = (g1 + 1) % 2
+
+    # flipping mutation, GLOBAL RUIDOSO
+    # p = 0.5
+    # for i in range(len(mut)):
+    #     if random.random() < p:
+    #         mut[i] = (mut[i] + 1) % 2
+
+    # swap mutation, LOCAL
+    i, j = random.sample(range(len(mut)), k=2)
+    mut[i], mut[j] = mut[j], mut[i]
     return Individual.new(mut)
 
 
