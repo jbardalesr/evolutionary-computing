@@ -6,4 +6,6 @@ This reposity is for practice the course of Evolutionary Computing at Universida
 
 2. Ivan Gridin. *Learning Genetic Algorithms with Python*.
 
-2. Leonardo  Azevedo. *Applied Evolutionary Algorithms for Engineers Using Python*. 
+3. Leonardo  Azevedo. *Applied Evolutionary Algorithms for Engineers Using Python*. 
+
+4. Clinton Sheppard. *Genetic Algorithms with Python*. 
