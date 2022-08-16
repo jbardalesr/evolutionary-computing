@@ -8,4 +8,5 @@ This reposity is for practice the course of Evolutionary Computing at Universida
 
 3. Leonardo  Azevedo. *Applied Evolutionary Algorithms for Engineers Using Python*. 
 
-4. Clinton Sheppard. *Genetic Algorithms with Python*. 
+4. Clinton Sheppard. *Genetic Algorithms with Python*, [github](https://github.com/handcraftsman/GeneticAlgorithmsWithPython).
+
