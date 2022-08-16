@@ -1,5 +1,5 @@
 # Evolutionary Computing
-This reposity is for practice the course of Evolutionary Computing at Universidad Nacional de Ingeniería
+In this repository there are solved exercises of the practices seen in the course of Evolutionary Computation of the National University of Engineering.
 
 ## References
 1. Germain Chartier. *Introduction to Genetic Algorithms*. 
